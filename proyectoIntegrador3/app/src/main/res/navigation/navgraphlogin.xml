@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraphlogin"
+    app:startDestination="@id/fragmentlogin">
+
+    <fragment
+        android:id="@+id/fragmentlogin"
+        android:name="com.example.proyectointegrador3.fragments.Fragmentlogin"
+        android:label="fragmentlogin_fragment"
+        tools:layout="@layout/fragmentlogin_fragment" >
+        <action
+            android:id="@+id/action_fragmentlogin_to_fragmentlist"
+            app:destination="@id/fragmentlist" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentlist"
+        android:name="com.example.proyectointegrador3.fragments.Fragmentlist"
+        android:label="fragmentlist_fragment"
+        tools:layout="@layout/fragmentlist_fragment" >
+        <argument
+            android:name="user"
+            app:argType="com.example.proyectointegrador3.entities.User" />
+        <action
+            android:id="@+id/action_fragmentlist_to_fragmentdetaileditem"
+            app:destination="@id/fragmentdetaileditem" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentdetaileditem"
+        android:name="com.example.proyectointegrador3.fragments.Fragmentdetaileditem"
+        android:label="fragmentdetaileditem_fragment"
+        tools:layout="@layout/fragmentdetaileditem_fragment" >
+        <argument
+            android:name="pokemon"
+            app:argType="com.example.proyectointegrador3.entities.Pokemon" />
+    </fragment>
+</navigation>
